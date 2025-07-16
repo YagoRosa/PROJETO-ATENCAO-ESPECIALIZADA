@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+   <link rel="icon" type="image/png" href="/imagens/logo_svg.svg">
+  <title>Seleção de Consultas</title>
+</head>
+<body>
+  <header>
+     <div class="linha-topo"></div>
+    <div class="logo">
+      <a href="home.html"><img src="/imagens/logo_itaborai.png" alt="PREFEITURA DE ITABORAÍ"></a>
+    </div>
+    <h1>Seleção da Consulta</h1>
+  </header>
+  <main>
+    <input type="text" id="search" placeholder="Pesquisar especialidade...">
+    <div id="consultas" class="consulta-grid">
+      <div class="consulta-card" data-name="Cardiologia">
+        <h3>Cardiologia</h3>
+         <div class="linha-topo"></div>
+        <p>Especialidade voltada ao diagnóstico e tratamento de doenças do coração.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+      <div class="consulta-card" data-name="Ginecologia">
+        <h3>Ginecologia</h3>
+        <p>Atendimento à saúde da mulher, incluindo exames preventivos.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+      <div class="consulta-card" data-name="Neurologia">
+        <h3>Neurologia</h3>
+        <p>Consulta especializada para condições do sistema nervoso.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+      <div class="consulta-card" data-name="Dermatologia">
+        <h3>Dermatologia</h3>
+        <p>Tratamento de doenças da pele, cabelos e unhas.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+      <div class="consulta-card" data-name="Ortopedia">
+        <h3>Ortopedia</h3>
+        <p>Avaliação e cuidados com ossos, articulações e músculos.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    const searchInput = document.getElementById("search");
+    const consultaCards = document.querySelectorAll(".consulta-card");
+
+    searchInput.addEventListener("input", () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      consultaCards.forEach(card => {
+        const consultaName = card.dataset.name.toLowerCase();
+        card.style.display = consultaName.includes(searchTerm) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>

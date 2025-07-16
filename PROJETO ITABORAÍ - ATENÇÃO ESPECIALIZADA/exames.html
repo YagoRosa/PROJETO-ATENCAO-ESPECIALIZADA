@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+   <link rel="icon" type="image/png" href="/imagens/logo_svg.svg">
+  <title>Seleção de Exames</title>
+ 
+</head>
+<body>
+   <div class="linha-topo"></div>
+  <header>
+     <div class="logo">
+       <a href="home.html"><img src="/imagens/logo_itaborai.png" alt="PREFEITURA DE ITABORAÍ"></a>
+    </div>
+    <h1>Seleção do Exame</h1>
+  </header>
+  <main>
+    <input type="text" id="search" placeholder="Pesquisar exame...">
+    <div id="exams" class="exam-grid">
+      <div class="exam-card" data-name="Ressonância Magnética">
+        <h3>Ressonância Magnética</h3>
+        <p>Exame por imagem detalhada dos órgãos e tecidos internos.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+      <div class="exam-card" data-name="ECOTT">
+        <h3>ECOTT</h3>
+        <p>Ecocardiograma transesofágico para avaliação cardíaca.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+      <div class="exam-card" data-name="Ultrassonografia">
+        <h3>Ultrassonografia</h3>
+        <p>Exame por ultrassom para análise de órgãos internos.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+      <div class="exam-card" data-name="Endoscopia">
+        <h3>Endoscopia</h3>
+        <p>Visualização interna do sistema digestivo superior.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+      <div class="exam-card" data-name="Colonoscopia">
+        <h3>Colonoscopia</h3>
+        <p>Análise do intestino grosso com câmera flexível.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+      <div class="exam-card" data-name="Mamografia">
+        <h3>Mamografia</h3>
+        <p>Exame das mamas para detecção precoce de câncer.</p>
+        <a href="#">Clique para acessar</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    const searchInput = document.getElementById("search");
+    const examCards = document.querySelectorAll(".exam-card");
+
+    searchInput.addEventListener("input", () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      examCards.forEach(card => {
+        const examName = card.dataset.name.toLowerCase();
+        card.style.display = examName.includes(searchTerm) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
+
