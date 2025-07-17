@@ -50,17 +50,11 @@ Exibe orientações detalhadas sobre o fluxo de encaminhamento (Municipal, Estad
 ## 📁 Estrutura do Projeto
 
 portal-ubs-itaborai
-├── index.html
-├── style.css
-├── script.js
-├── .gitignore
-└── README.md
+├── index.html<br>
+├── style.css<br>
+├── script.js<br>
+├── .gitignore<br>
+└── README.md<br>
 
 ---
 
-## ⚠️ Aviso de Licença
-
-Este projeto é de uso exclusivo da equipe de desenvolvimento e regulação de Itaboraí.  
-**Não está licenciado para cópia, modificação ou distribuição** sem autorização prévia.
-
-© 2025 Yago Santanna – Todos os direitos reservados.
