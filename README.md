@@ -30,16 +30,6 @@ Exibe orientações detalhadas sobre o fluxo de encaminhamento (Municipal, Estad
 
 ---
 
-## ⚠️ Aviso de Licença
-
-Este projeto é de uso exclusivo da equipe de desenvolvimento e regulação de Itaboraí.  
-**Não está licenciado para cópia, modificação ou distribuição** sem autorização prévia.
-
-© 2025 Yago Santanna – Todos os direitos reservados.
-
-
----
-
 ## 📌 Funcionalidades
 
 - ✅ Interface simples e responsiva
