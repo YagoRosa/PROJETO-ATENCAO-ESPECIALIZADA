@@ -1,68 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-   <link rel="icon" type="image/png" href="/imagens/logo_svg.svg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seleção de Exames</title>
- 
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="/imagens/logo_svg.svg" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-   <div class="linha-topo"></div>
+  <div class="linha-topo"></div>
+
   <header>
-     <div class="logo">
-       <a href="home.html"><img src="/imagens/logo_itaborai.png" alt="PREFEITURA DE ITABORAÍ"></a>
+    <div class="logo">
+      <a href="home.html">
+        <img src="/imagens/logo_itaborai.png" alt="PREFEITURA DE ITABORAÍ" />
+      </a>
     </div>
     <h1>Seleção do Exame</h1>
   </header>
+
   <main>
-    <input type="text" id="search" placeholder="Pesquisar exame...">
-    <div id="exams" class="exam-grid">
-      <div class="exam-card" data-name="Ressonância Magnética">
+    <input type="text" id="search" placeholder="Pesquisar exame..." />
+
+    <section id="exams" class="exam-grid">
+      <article class="exam-card" data-name="Ressonância Magnética">
         <h3>Ressonância Magnética</h3>
         <p>Exame por imagem detalhada dos órgãos e tecidos internos.</p>
-        <a href="#">Clique para acessar</a>
-      </div>
-      <div class="exam-card" data-name="ECOTT">
+        <button class="open-modal">Clique para acessar</button>
+      </article>
+
+      <article class="exam-card" data-name="ECOTT">
         <h3>ECOTT</h3>
         <p>Ecocardiograma transesofágico para avaliação cardíaca.</p>
-        <a href="#">Clique para acessar</a>
-      </div>
-      <div class="exam-card" data-name="Ultrassonografia">
+        <button class="open-modal">Clique para acessar</button>
+      </article>
+
+      <article class="exam-card" data-name="Ultrassonografia">
         <h3>Ultrassonografia</h3>
         <p>Exame por ultrassom para análise de órgãos internos.</p>
-        <a href="#">Clique para acessar</a>
-      </div>
-      <div class="exam-card" data-name="Endoscopia">
+        <button class="open-modal">Clique para acessar</button>
+      </article>
+
+      <article class="exam-card" data-name="Endoscopia">
         <h3>Endoscopia</h3>
         <p>Visualização interna do sistema digestivo superior.</p>
-        <a href="#">Clique para acessar</a>
-      </div>
-      <div class="exam-card" data-name="Colonoscopia">
+        <button class="open-modal">Clique para acessar</button>
+      </article>
+
+      <article class="exam-card" data-name="Colonoscopia">
         <h3>Colonoscopia</h3>
         <p>Análise do intestino grosso com câmera flexível.</p>
-        <a href="#">Clique para acessar</a>
-      </div>
-      <div class="exam-card" data-name="Mamografia">
+        <button class="open-modal">Clique para acessar</button>
+      </article>
+
+      <article class="exam-card" data-name="Mamografia">
         <h3>Mamografia</h3>
         <p>Exame das mamas para detecção precoce de câncer.</p>
-        <a href="#">Clique para acessar</a>
-      </div>
-    </div>
+        <button class="open-modal">Clique para acessar</button>
+      </article>
+    </section>
   </main>
-  <script>
-    const searchInput = document.getElementById("search");
-    const examCards = document.querySelectorAll(".exam-card");
 
-    searchInput.addEventListener("input", () => {
-      const searchTerm = searchInput.value.toLowerCase();
-      examCards.forEach(card => {
-        const examName = card.dataset.name.toLowerCase();
-        card.style.display = examName.includes(searchTerm) ? "block" : "none";
-      });
-    });
-  </script>
+  <!-- Modal -->
+  <div id="examModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Fechar modal">&times;</button>
+      <h2>Ressonância Magnética</h2>
+      <h2>Disponibilidade</h2>
+      <div class="modal_subtitulos">
+      <h4 class="Municipal" style="background-color: #DF8637;">Municipal</h4><h4 class="Municipal" style="background-color: #5495BA;">Estadual</h4><h4 class="Municipal" style="background-color: #C394FF;">PPI</h4>
+      </div>
+       <div class="linha-meio"></div>
+      <h3>Forma de encaminhar conforme o tipo de recurso.  </h3>      
+      <h5>Em caso de encaminhamento Municipal</h5>
+      <p>A prefeitura administra diretamente os recursos e regula as vagas.
+
+Como funciona:
+
+O paciente passa por consulta em uma UBS (Unidade Básica de Saúde) com médico clínico geral ou especialista.
+
+Havendo indicação clínica para a ressonância, o médico solicita o exame.
+
+A solicitação entra na regulação municipal (SISREG ou sistema próprio).
+
+A Central de Regulação do município avalia:
+
+Se a solicitação está bem justificada (critérios clínicos, protocolo local).
+
+Se há vagas disponíveis na rede contratada ou própria.
+
+A vaga é agendada conforme fila de prioridade.
+
+Observações:
+
+Exames de média e alta complexidade são mais escassos e exigem laudos detalhados.
+
+Pode haver prestadores contratados (clínicas terceirizadas).</p>
+      <h5>Em caso de encaminhamento Estadual</h5>
+      Secretaria Estadual de Saúde assume a responsabilidade pelo exame.
+
+Como funciona:
+
+O médico da UBS ou de uma UPA solicita o exame.
+
+Se o exame for considerado de alta complexidade ou não pactuado com o município, ele é direcionado ao fluxo estadual.
+
+A regulação estadual (via sistemas como SER, SISRCA ou SISREG Estadual) avalia a solicitação.
+
+O paciente é então agendado em um hospital estadual ou clínica referenciada pelo Estado.
+
+Observações:
+
+Exige justificativa técnica.
+
+Pode ter fila própria e critérios de regulação mais rígidos.
+
+Usado quando o município não tem gestão plena da atenção especializada ou não possui capacidade instalada.
+      <h5>Em caso de encaminhamento PPI</h5>
+Encaminhamento via PPI (Programação Pactuada e Integrada)
+Gestão: É uma pactuação entre municípios ou entre município e Estado.
+
+Como funciona:
+
+O paciente é atendido no seu município de origem.
+
+O exame é solicitado e direcionado para realização em outro município que tenha oferta disponível, de acordo com a pactuação (PPI).
+
+A Central de Regulação registra a solicitação e encaminha via SISREG ou sistema acordado.
+
+O município que realiza o exame é depois compensado financeiramente pelo gestor estadual.
+
+Observações:
+
+Acesso depende da pactuação entre os municípios.
+
+Normalmente, usado por municípios pequenos que não têm prestadores próprios.
+
+Pode ser mais demorado, pois depende da oferta externa e acordos regionais.
+
+    </div>
+  </div>
 </body>
 </html>
 
